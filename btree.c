@@ -31,7 +31,7 @@ void btree_check(){
 
             if(auxiliar->next == NULL){
                 auxiliar->next = corrente;
-                printf("\nALOCADO A DIREITA");
+                printf("\nALOCADO A DIREITA do nodo %d\n", auxiliar->codigo);
                 aloca = 1;
                 system("pause");
             }else{
@@ -49,7 +49,7 @@ void btree_check(){
 
             if(auxiliar->back == NULL){
                 auxiliar->back = corrente;
-                printf("\nALOCADO A ESQUERDAA");
+                printf("\nALOCADO A ESQUERDA do nodo %d\n", auxiliar->codigo);
                 aloca = 1;
                 system("pause");
             }else{
@@ -59,8 +59,9 @@ void btree_check(){
         }else{
 
             printf("\nCHAVE DUPLICADA!");
+            printf("\nInsira uma chave unica!\n");
             system("pause");
-            return;
+            break;
 
         }
 
@@ -85,6 +86,8 @@ void Inserir()
     {
         raiz = corrente;
         auxiliar = corrente;
+        printf("\nELEMENTO ALOCADO NA RAIZ!\n");
+        system("pause");
     }
     else
     {
@@ -109,8 +112,7 @@ int main ()
         printf("\n Estrutura de dados - Arvore Multi-direcional");
         printf("\n======================================================");
         printf("\n 1 - Inserir");
-        printf("\n 2 - Consulta");
-        printf("\n 6 - Sair\n");
+        printf("\n 0 - Sair\n");
         printf("======================================================\n");
         printf("\nEscolha uma opcao: ");
         scanf("%d", &op);
@@ -121,16 +123,14 @@ int main ()
             case 1:
                 Inserir();
                 break;
-            case 2:
-                break;
-            case 6:
+            case 0:
                 printf("\nSaindo do sistema...\n");
                 break;
             default:
-                printf("\nOpção invalida!\n");
+                printf("\nOpÃ§Ã£o invalida!\n");
                 system("pause");
         }
-    } while (op != 6);
+    } while (op != 0);
 
     return 0;
 }
